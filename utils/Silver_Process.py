@@ -44,8 +44,8 @@ def resolve_assignment_csv(filename: str, base: str | Path | None = None) -> str
     cur = base.resolve()
     assignment_dir = None
     for p in [cur, *cur.parents]:
-        if (p / "Assignment").is_dir():
-            assignment_dir = p / "Assignment"
+        if (p / "MLE_Assignment").is_dir():
+            assignment_dir = p / "MLE_Assignment"
             break
     if assignment_dir is None:
         raise FileNotFoundError("cannot find 'Assignment'，please ensure the base parameters")

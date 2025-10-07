@@ -78,7 +78,6 @@ for date_str in dates_str_lst:
 
 # ------------------------Silver--------------------------------------------------
 
-
 # silver: clean loan daily table
 silver_loan_daily_directory = "datamart/silver/loan_daily/"
 
@@ -101,6 +100,14 @@ silver_loan_daily_directory_cs = "datamart/silver/click_stream/"
 process_silver_table_cs(silver_loan_daily_directory_cs, spark)
 
 # ------------------------Gold--------------------------------------------------
+silver_loan_daily_directory_financial = "datamart/gold/feature_store/"
+process_silver_table_financial(silver_loan_daily_directory_financial, spark)
+
+silver_loan_daily_directory_attributes = "datamart/gold/feature_store/"
+process_silver_table_attributes(silver_loan_daily_directory_attributes, spark)
+
+silver_loan_daily_directory_cs = "datamart/gold/feature_store/"
+process_silver_table_cs(silver_loan_daily_directory_cs, spark)
 
 gold_label_store_directory = "datamart/gold/label_store/"
 if not os.path.exists(gold_label_store_directory):
