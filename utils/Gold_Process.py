@@ -50,14 +50,3 @@ def process_labels_gold_table(snapshot_date_str, silver_loan_daily_directory, go
 
     return df
 
-
-def save_to_another(silver_loan_daily_directory,gold_label_store_directory,spark):
-    # Save to another location
-    storage = ["\datamart\silver\attributes"]
-    for i in storage:
-        partition_name = "silver_loan_daily_" +  + '.parquet'
-        filepath = silver_loan_daily_directory + partition_name
-        df = spark.read.parquet(filepath)
-        filepath_cs =
-        filepath_financial =
-        filepath_attributes =
